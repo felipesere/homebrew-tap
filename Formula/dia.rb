@@ -1,26 +1,26 @@
 class Fzj < Formula
   desc "Calendar display tool"
   homepage "https://github.com/felipesere/dia"
-  version "0.1.1-pre0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/felipesere/dia/releases/download/v#{version}/dia-macos-aarch64.tar.gz"
-      sha256 "ab1b63244e06fd5ba7b7a8a31b69a4df901c82076781e9e1e780f5590220667d"
+      sha256 "abee8ec8591c08b5ebd554ef0ac314d722a97c44419d5faf6619e0586a85513f"
     else
       url "https://github.com/felipesere/dia/releases/download/v#{version}/dia-macos-x86_64.tar.gz"
-      sha256 "d630b84c59b60ad58769c686bf284ac8ed161888c40bd1f06e9dea57c40f27bd"
+      sha256 "46e424ed8cc4866ddd5f00e62e6f17b0ec32f401dcb9416aca8882e9a1bc8b9f"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/felipesere/dia/releases/download/v#{version}/dia-linux-aarch64.tar.gz"
-      sha256 "a569ac059cdffbbe65206e6449a657c59f5f00bb7f26e3b4c626d9cdf746685e"
+      sha256 "fcbc29885c04b82c2b2483f9cf69f6532eca48b23922a26be6453c2887fe5f03"
     else
       url "https://github.com/felipesere/dia/releases/download/v#{version}/dia-linux-x86_64.tar.gz"
-      sha256 "22f55cdb4fca204f6f5c953894a6e73d282fe05d6d563c5b5c9ae481d9f3d121"
+      sha256 "5808d7147a56ce8c9edd50d8c53db3899393756a8b162bc57ffff49626bf1cfd"
     end
   end
 
