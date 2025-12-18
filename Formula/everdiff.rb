@@ -1,4 +1,4 @@
-class everdiff < Formula
+class Everdiff < Formula
   desc "Tool for fancy diffing of YAML"
   homepage "https://github.com/felipesere/everdiff"
   version "0.1.2"
