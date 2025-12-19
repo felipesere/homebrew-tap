@@ -1,26 +1,26 @@
 class Fzj < Formula
-  desc "Fzf-like command-line tool that operates on JSON"
+  desc ""
   homepage "https://github.com/felipesere/fzj"
-  version "0.1.2"
-  license "MIT"
+  version "0.1.3"
+  license ""
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/felipesere/fzj/releases/download/v#{version}/fzj-macos-aarch64.tar.gz"
-      sha256 "e8930cdff41751d5d15d749c1108576d20e5da3f3892d32a10865e1d2f299a15"
+      sha256 "9ca74eb28d6a81493709516d8acfaa5d79db13f311046fa695bd8feea4efc63e"
     else
       url "https://github.com/felipesere/fzj/releases/download/v#{version}/fzj-macos-x86_64.tar.gz"
-      sha256 "87b49420c482bdbe716cb80f2858827060e97c36d1d560723eb471d7bbee6fcd"
+      sha256 "ba5c9b9e7c53aec960a6fab619df371a0e26b7ce5648010a33926bd4852b9d60"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/felipesere/fzj/releases/download/v#{version}/fzj-linux-aarch64.tar.gz"
-      sha256 "5b2e7f453c64a033cfa2412dcabe39ffca0e48b73a422fe117baf4328f6995b7"
+      sha256 "e40e0c29418bc8744236c4619085bbb800fe9e94aa5701bbb79ac33818eb348b"
     else
       url "https://github.com/felipesere/fzj/releases/download/v#{version}/fzj-linux-x86_64.tar.gz"
-      sha256 "2afcd98a8f0a9d3bf2b0d546fa3d0aade2d8c2edd00fb878026ee4f81dded263"
+      sha256 "291411f6b324e0cb4c66c80875c168295bc7c2d12240cfc79af7d7ada269eaf1"
     end
   end
 
