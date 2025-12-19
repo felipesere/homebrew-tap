@@ -1,26 +1,26 @@
 class Dia < Formula
-  desc "Calendar display tool"
+  desc "Fancy YAML diffing"
   homepage "https://github.com/felipesere/dia"
-  version "0.1.3"
+  version "0.1.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/felipesere/dia/releases/download/v#{version}/dia-macos-aarch64.tar.gz"
-      sha256 "fdef296e851522bc1b76563e569cb15758049cfa2bb09e4d97a17993b8486300"
+      sha256 "ea939544fa580d2f496fb0b745a11f1d9473c86b0d8ae4deb3c4966a768c36ed"
     else
       url "https://github.com/felipesere/dia/releases/download/v#{version}/dia-macos-x86_64.tar.gz"
-      sha256 "ed5bf5b02fe7800aa09e7e0b715fe936bbfe440dc05af5b17ae80d05d665e772"
+      sha256 "cdf134eaf56d0fdbad92feb219381d55f9b8fb725883f1c3932a64d7f10f3c29"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/felipesere/dia/releases/download/v#{version}/dia-linux-aarch64.tar.gz"
-      sha256 "89bbb567550a3f33c9c5024b1841e8a0fadebd05aa43dd1690842413256686da"
+      sha256 "0bb803e6ab9ab304c9f72bceefb1c4fc7a958296932885370c0999bcdf034073"
     else
       url "https://github.com/felipesere/dia/releases/download/v#{version}/dia-linux-x86_64.tar.gz"
-      sha256 "2f9360d6a6152e8790db770de7b3ad7ed92e1a9c73e54957d6d9fb1e982cce79"
+      sha256 "e89d70b56a39c774f7bdd065dcebee684075c753d4e94c8acc748cae9ecbc60a"
     end
   end
 
