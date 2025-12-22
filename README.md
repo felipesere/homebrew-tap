@@ -1,5 +1,16 @@
 # Felipesere Tap
 
+## Available Formulae
+
+<!-- FORMULA_TABLE_START -->
+| Name | Version | Homepage |
+|------|---------|----------|
+| dia | 0.1.3 | https://github.com/felipesere/dia |
+| everdiff | 0.1.4-pre4 | https://github.com/felipesere/everdiff |
+| fzj | 0.1.2 | https://github.com/felipesere/fzj |
+| nutag | 0.1.1 | https://github.com/felipesere/nutag |
+<!-- FORMULA_TABLE_END -->
+
 ## How do I install these formulae?
 
 `brew install felipesere/tap/<formula>`

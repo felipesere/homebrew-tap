@@ -1,0 +1,86 @@
+name: Update README Formula Table
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Formula/**'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update formula table in README
+        run: |
+          # Generate the table to a temp file
+          {
+            echo "| Name | Version | Homepage |"
+            echo "|------|---------|----------|"
+
+            for file in Formula/*.rb; do
+              if [ -f "$file" ]; then
+                name=$(basename "$file" .rb)
+                version=$(grep -m1 'version "' "$file" | sed 's/.*version "\([^"]*\)".*/\1/')
+                homepage=$(grep -m1 'homepage "' "$file" | sed 's/.*homepage "\([^"]*\)".*/\1/')
+
+                if [ -n "$version" ] && [ -n "$homepage" ]; then
+                  echo "| ${name} | ${version} | ${homepage} |"
+                fi
+              fi
+            done
+          } > /tmp/table.md
+
+          # Check if markers exist in README
+          if ! grep -q "<!-- FORMULA_TABLE_START -->" README.md; then
+            echo "Error: FORMULA_TABLE_START marker not found in README.md"
+            exit 1
+          fi
+
+          if ! grep -q "<!-- FORMULA_TABLE_END -->" README.md; then
+            echo "Error: FORMULA_TABLE_END marker not found in README.md"
+            exit 1
+          fi
+
+          # Replace content between markers using awk
+          awk '
+            /<!-- FORMULA_TABLE_START -->/ {
+              print
+              while ((getline line < "/tmp/table.md") > 0) {
+                print line
+              }
+              skip = 1
+              next
+            }
+            /<!-- FORMULA_TABLE_END -->/ {
+              skip = 0
+              print
+              next
+            }
+            !skip { print }
+          ' README.md > README.md.tmp
+
+          mv README.md.tmp README.md
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet README.md; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          git commit -m "Update formula table in README"
+          git push
