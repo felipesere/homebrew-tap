@@ -6,7 +6,7 @@
 | Name | Version | Homepage |
 |------|---------|----------|
 | dia | 0.1.5 | https://github.com/felipesere/dia |
-| everdiff | 0.1.4 | https://github.com/felipesere/everdiff |
+| everdiff | 0.1.5 | https://github.com/felipesere/everdiff |
 | fzj | 0.1.4 | https://github.com/felipesere/fzj |
 | nutag | 0.1.2 | https://github.com/felipesere/nutag |
 <!-- FORMULA_TABLE_END -->
