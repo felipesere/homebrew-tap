@@ -1,5 +1,5 @@
 class Nutag < Formula
-  desc "A small tool to create tags on Github"
+  desc "Small tool to create tags on Github"
   homepage "https://github.com/felipesere/nutag"
   version "0.1.2"
   license "mit"

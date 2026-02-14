@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'Formula/**'
+      - "Formula/**"
 
 jobs:
   update-readme:
@@ -71,11 +71,10 @@ jobs:
         id: check_changes
         run: |
           if git diff --quiet README.md; then
-            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
-            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
-
       - name: Commit and push changes
         if: steps.check_changes.outputs.changed == 'true'
         run: |
