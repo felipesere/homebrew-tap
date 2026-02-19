@@ -1,26 +1,26 @@
 class Nutag < Formula
   desc "Small tool to create tags on Github"
   homepage "https://github.com/felipesere/nutag"
-  version "0.1.3"
+  version "0.1.4"
   license "mit"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/felipesere/nutag/releases/download/v#{version}/nutag-macos-aarch64.tar.gz"
-      sha256 "36d46d73408736766ae0816103eca5d67f00bfe3a27b2933287826e03c026129"
+      sha256 "75feaaed3a4a1abb9543dc7083a8e7191e22610604889a1a10565acea92f488e"
     else
       url "https://github.com/felipesere/nutag/releases/download/v#{version}/nutag-macos-x86_64.tar.gz"
-      sha256 "0e301ca06ecfd6b5178c94f56dc39d268fd0271514c0a963cf19b4ffb8ef2c3c"
+      sha256 "d899b13b80702e08f4135adc981a0230f3918a415b4ff18ba2c8358754a70749"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/felipesere/nutag/releases/download/v#{version}/nutag-linux-aarch64.tar.gz"
-      sha256 "030c9db4dc9d1381c4be7dc3662db32f6fc470726f34cc6505c5ab549a99c13d"
+      sha256 "aa4920b588812038fd37cbb5491e6328e52a5bb7f6eb51076934307028036f73"
     else
       url "https://github.com/felipesere/nutag/releases/download/v#{version}/nutag-linux-x86_64.tar.gz"
-      sha256 "868687dfc98e2c64cc164fb5a9a42bd688c0f1de09e281355d10c58a17498b04"
+      sha256 "8ea602498afa4e7b43ed342eb19fb0c3e0ccb002f80c5ea060a2bddabe0f786d"
     end
   end
 
