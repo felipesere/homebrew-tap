@@ -9,6 +9,7 @@
 | everdiff | 0.1.8 | https://github.com/felipesere/everdiff |
 | fzj | 0.1.4 | https://github.com/felipesere/fzj |
 | nutag | 0.1.5 | https://github.com/felipesere/nutag |
+| polydiff | 0.1.2 | https://github.com/felipesere/polydiff |
 <!-- FORMULA_TABLE_END -->
 
 ## How do I install these formulae?
