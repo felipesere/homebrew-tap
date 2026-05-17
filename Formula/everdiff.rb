@@ -1,26 +1,26 @@
 class Everdiff < Formula
   desc "Tool for fancy diffing of YAML"
   homepage "https://github.com/felipesere/everdiff"
-  version "0.1.9"
+  version "0.1.10"
   license "mit"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/felipesere/everdiff/releases/download/v#{version}/everdiff-macos-aarch64.tar.gz"
-      sha256 "cfe10f7e6b3c22fc51aeacfdee981c9d71fa6a0d1750df9cde01adab07378bfe"
+      sha256 "512ac8b5bfe2c44c276db293fc7b4cc079a38b313c26d7fc6497b8f283b67ef2"
     else
       url "https://github.com/felipesere/everdiff/releases/download/v#{version}/everdiff-macos-x86_64.tar.gz"
-      sha256 "cf9e142187b97925f10a148809ba0247a93601db105b6f9841dab40316a913af"
+      sha256 "7550fc8655f7a69b52758465b59b31d35302b054863e0c621ebf6b13bdccad37"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/felipesere/everdiff/releases/download/v#{version}/everdiff-linux-aarch64.tar.gz"
-      sha256 "f82b14a30cbf037c27c364d2dd3ccb37456e0007f60f0f95e7e6aa9ea98b7b39"
+      sha256 "b3e011f5989c50d5839b4c6af9442d5dbdd18326524b1ab5c762a099e2328725"
     else
       url "https://github.com/felipesere/everdiff/releases/download/v#{version}/everdiff-linux-x86_64.tar.gz"
-      sha256 "068b277d8eb4aebf8182342a5dfd5db315f7386ffd349076f9edfda069098ed0"
+      sha256 "e7faabf126c9ad9481562fac311045a1fdb33095bb5ace54dbac1a0f8507c148"
     end
   end
 
